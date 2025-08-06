@@ -1,0 +1,121 @@
+ideas = {
+    country = {
+        National_Minorities1 = {
+
+            removal_cost = -1
+
+            allowed = {
+            
+            }
+            
+            picture = generic_pp_unity_bonus
+
+            modifier = {
+                consumer_goods_factor = 0.25
+                political_power_gain = -0.25
+                stability_factor = -0.15
+                war_support_factor = -0.20
+            }
+        }
+    }
+    country = {
+        National_Minorities2 = {
+
+            removal_cost = -1
+
+            allowed = {
+            
+            }
+            
+            picture = generic_pp_unity_bonus
+
+            modifier = {
+                consumer_goods_factor = 0.25
+                political_power_gain = -0.15
+                stability_factor = -0.15
+                war_support_factor = -0.15
+            }
+        }
+    }    
+    country = {
+        Literacy1 = {
+
+            removal_cost = -1
+
+            allowed = {
+
+            }
+
+            picture = generic_pp_unity_bonus
+        
+            modifier = {
+                research_speed_factor = -0.2
+            }
+       }
+    }
+    country = {
+        Literacy2 = {
+
+            removal_cost = -1
+
+            allowed = {
+
+            }
+
+            picture = generic_pp_unity_bonus
+        
+            modifier = {
+                research_speed_factor = -0.15
+            }
+       }
+    }
+    country = {
+        Literacy3 = {
+
+            removal_cost = -1
+
+            allowed = {
+
+            }
+
+            picture = generic_pp_unity_bonus
+        
+            modifier = {
+                research_speed_factor = -0.1
+            }
+       }
+    }
+        country = {
+        Literacy4 = {
+
+            removal_cost = -1
+
+            allowed = {
+
+            }
+
+            picture = generic_pp_unity_bonus
+        
+            modifier = {
+                research_speed_factor = -0.05
+            }
+       }
+    }
+        country = {
+        Albanian_Mobilization = {
+
+            removal_cost = -1
+
+            allowed = {
+
+            }
+
+            picture = generic_pp_unity_bonus
+        
+            modifier = {
+                mobilization_speed = 0.25
+                conscription_factor = 0.05
+            }
+       }
+    }
+}

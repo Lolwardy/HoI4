@@ -1,0 +1,39 @@
+add_namespace = ALB
+
+country_event = {
+	id = ALB.1
+	title = ALB.1.t
+	desc = ALB.1.d
+
+	trigger = {
+        NOT = { has_completed_focus = ALB_Economy_Focus_Tree }
+    }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = ALB.1.a
+		set_country_flag = Event1
+	}
+}
+
+country_event = {
+	id = ALB.2
+	title = ALB.2.t
+	desc = ALB.2.d
+
+	trigger = {
+        NOT = { has_completed_focus = ALB_Army_Focus_Tree }
+    }
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = ALB.2.a
+		set_country_flag = Event2
+	}
+}

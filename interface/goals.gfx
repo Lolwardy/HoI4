@@ -1,0 +1,7 @@
+SpriteTypes = {
+
+	SpriteType = {
+		name = "GFX_ALB_Army"
+		texturefile = "gfx/interface/goals/ALB/ALB_Army.dds"
+	}
+}

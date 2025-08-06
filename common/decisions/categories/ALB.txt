@@ -1,0 +1,13 @@
+ALB_Education_Reform_Decisions = {
+	icon = generic_political_actions
+	allowed = {
+		tag = ALB
+	}
+}
+
+ALB_Operation_Night_Eagle = {
+	icon = generic_political_actions
+	allowed = {
+		tag = ALB
+	}
+}

@@ -1,0 +1,300 @@
+focus_tree = {
+	id = ALB_focus_tree
+	
+	country = {
+			factor = 0
+			modifier = {
+			add = 10
+			tag = ALB
+		}
+	}
+	
+	focus = {
+		id = ALB_Presidency
+		icon = GFX_focus_generic_improve_the_administration
+		x = 1
+		y = 0
+
+		cost = 2
+
+		completion_reward = {
+			add_political_power = 25
+		}
+	}
+	focus = {
+		id = ALB_Reforms
+		icon = GFX_focus_generic_improve_the_administration
+		relative_position_id = ALB_Presidency
+		x = 0
+		y = 1
+
+		cost = 5
+
+		completion_reward = {
+			
+		}
+		
+		prerequisite = {
+			focus = ALB_Presidency
+		}
+
+	}
+	focus = {
+		id = ALB_National_Unity
+		icon = GFX_focus_generic_improve_the_administration
+		relative_position_id = ALB_Reforms
+		x = 0
+		y = 1
+
+		cost = 5
+
+		completion_reward = {
+			add_political_power = 25
+			if = { 
+				limit = { has_idea = National_Minorities1 }
+				swap_ideas = {
+					remove_idea = National_Minorities1
+					add_idea = National_Minorities2
+				}
+			}
+		}
+
+		prerequisite = {
+			focus = ALB_Reforms
+		}
+	}
+	focus = {
+		id = ALB_Education_Reform
+		icon = GFX_focus_generic_improve_the_administration
+		relative_position_id = ALB_Reforms
+		x = 2
+		y = 1
+
+		cost = 5
+
+		completion_reward = {
+			if = {
+				limit = { has_idea = Literacy1 }
+				swap_ideas = {
+					remove_idea = Literacy1
+					add_idea = Literacy2
+				}
+			}
+		}
+
+		prerequisite = {
+			focus = ALB_Reforms
+		}
+	}
+	focus = {
+		id = ALB_Administrative_Reform
+		icon = GFX_focus_generic_improve_the_administration
+		relative_position_id = ALB_Reforms
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = ALB_Reforms
+
+		cost = 5
+
+		}
+	}
+	focus = {
+		id = ALB_Army_Reform
+		icon = GFX_focus_generic_improve_the_administration
+		relative_position_id = ALB_Administrative_Reform
+		x = 1
+		y = 1
+		prerequisite = { focus = ALB_Administrative_Reform }
+		prerequisite = { focus = ALB_National_Unity }
+
+		cost = 5
+
+		completion_reward = {
+			trigger_event = { ALB.2 }
+		}
+
+	}
+	focus = {
+		id = ALB_Economy_Reform
+		icon = GFX_focus_generic_improve_the_administration
+		relative_position_id = ALB_Education_Reform
+		x = -1
+		y = 1
+		prerequisite = { focus = ALB_Education_Reform }
+		prerequisite = { focus = ALB_National_Unity }
+
+		cost = 5
+
+		completion_reward = {
+			trigger_event = { ALB.1 }
+		}
+
+	}
+	focus = {
+		id = ALB_Operation_The_Royal_Eagle
+		icon = GFX_focus_generic_improve_the_administration
+		relative_position_id = ALB_Army_Reform
+		x = 1
+		y = 1
+		prerequisite = { focus = ALB_Army_Reform }
+		prerequisite = { focus = ALB_Economy_Reform }
+		
+		cost = 5
+		
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = ALB_New_Era
+		icon = GFX_focus_generic_improve_the_administration
+		relative_position_id = ALB_Operation_The_Royal_Eagle
+		x = 0
+		y = 1
+		prerequisite = { focus = ALB_Operation_The_Royal_Eagle }
+
+		cost = 5
+		
+		completion_reward = {
+			add_political_power = 25
+			add_stability = 0.02
+			add_war_support = 0.03
+		}
+	}
+	focus = {
+		id = ALB_Army_Focus_Tree
+		icon = GFX_ALB_Army
+		x = 8
+		y = 0
+
+		available = {
+			has_country_flag = Event2
+		}
+
+		cost = 10
+
+		completion_reward = {
+			army_experience = 15
+		}
+
+	}
+	focus = {
+		id = ALB_Army_Aggresive_Strategy
+		icon = GFX_ALB_Army
+		relative_position_id = ALB_Army_Focus_Tree
+		x = 1
+		y = 1
+		prerequisite = { focus = ALB_Army_Focus_Tree }
+
+		mutually_exclusive = { focus = ALB_Army_Defensive_Strategy }
+
+		cost = 5
+
+		completion_reward = {
+			add_experience_gain_army_factor  = 0.25
+		}
+
+	}
+		focus = {
+		id = ALB_Army_Defensive_Strategy
+		icon = GFX_ALB_Army
+		relative_position_id = ALB_Army_Focus_Tree
+		x = 3
+		y = 1
+		prerequisite = { focus = ALB_Army_Focus_Tree }
+
+		mutually_exclusive = { focus = ALB_Army_Aggresive_Strategy }
+
+		cost = 5
+
+		completion_reward = {
+			add_experience_gain_army_factor  = 0.25
+		}
+
+	}
+	focus = {
+		id = ALB_Military_Industry_Restoration
+		icon = GFX_focus_generic_improve_the_administration
+		x = 6
+		y = 0
+
+		available = {
+			has_war = yes
+		}
+
+		cost = 7
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 44 }
+				limit = {
+					is_core_of = ROOT
+					impassable = no
+					free_building_slots = { building = arms_factory size > 1 }
+				}
+
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+					state = 44
+				}
+			}
+		}
+	}
+	focus = {
+		id = ALB_Mobilization
+		icon = GFX_focus_generic_improve_the_administration
+		relative_position_id = ALB_Military_Industry_Restoration
+		x = 1
+		y = 1
+		prerequisite = { focus = ALB_Military_Industry_Restoration }
+		prerequisite = { focus = ALB_Army_Focus_Tree }
+
+		available = {
+			has_war = yes
+		}
+
+		cost = 7
+
+		completion_reward = {
+			add_ideas = Albanian_Mobilization
+		}
+		
+	}
+	focus = {
+		id = ALB_Economy_Focus_Tree
+		icon = GFX_focus_generic_improve_the_administration
+		x = 16
+		y = 0
+
+		available = {
+			has_country_flag = Event2
+		}
+
+		cost = 5
+
+		completion_reward = {
+
+		}
+	}
+		focus = {
+		id = ALB_Healtcare
+		icon = GFX_focus_generic_improve_the_administration
+		x = 15
+		y = 1
+		prerequisite = { focus = ALB_Economy_Focus_Tree }
+		relative_position_id = { ALB_Economy_Focus_Tree }
+
+		available = {
+			always = no
+		}
+
+		cost = 5
+
+		completion_reward = {
+
+		}
+	}
+}

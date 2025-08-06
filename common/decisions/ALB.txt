@@ -1,0 +1,76 @@
+ALB_Education_Reform_Decisions = {
+	ALB_Basic_Education = {
+		icon = generic_industry
+		available = {
+			has_completed_focus = ALB_Education_Reform
+		}
+		visible = {
+			has_completed_focus = ALB_Education_Reform
+		}
+		cost = 25
+ 		fire_only_once = yes
+ 		days_remove = 120
+
+		remove_effect = {
+			if = {
+				limit = { idea = Literacy2}
+				swap_ideas = {
+					remove_idea = Literacy2
+					add_idea = Literacy3
+				}
+			}
+		}
+	}
+	ALB_School_Expansion = {
+		icon = generic_industry
+		available = {
+			has_completed_focus = ALB_Education_Reform
+			has_idea = Literacy3
+		}
+		visible = {
+			has_completed_focus = ALB_Education_Reform
+			has_idea = Literacy3
+		}
+		cost = 45
+ 		fire_only_once = yes
+ 		days_remove = 120
+
+		remove_effect = {
+			add_building_construction = {
+				type = civ_factory
+				level = 1
+				instant_build = yes
+			}
+
+			if = {
+				limit = { idea = Literacy3}
+				swap_ideas = {
+					remove_idea = Literacy3
+					add_idea = Literacy4
+				}
+			}
+		}
+	}
+	ALB_Mastering_Advanced_Teaching_Methods = {
+		icon = generic_industry
+		available = {
+			has_completed_focus = ALB_Education_Reform
+			has_idea = Literacy4
+		}
+		visible = {
+			has_completed_focus = ALB_Education_Reform
+			has_idea = Literacy4
+		}
+		cost = 25
+ 		fire_only_once = yes
+ 		days_remove = 120
+
+		remove_effect = {
+
+			if = {
+				limit = { idea = Literacy3}
+				remove_ideas = Literacy4
+			}
+		}
+	}
+}
