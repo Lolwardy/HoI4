@@ -10,7 +10,7 @@ focus_tree = {
     }
 
     focus = {
-        id = MNT_Strengthening_The_Union
+        id = MNT_Alliance_With_Serbia_1
         icon = GFX_focus_generic_improve_the_administration
         x = 1
         y = 0
@@ -18,6 +18,121 @@ focus_tree = {
         cost = 5
 
         completion_reward = {
+            add_political_power = 25
+            add_opinion_modifier = {
+                target = SER
+                who = MNT
+                modifier = "friendly"
+                value = 50
+            }
+
+            give_guarantee = ALB
+
+            give_military_access = ALB
+
+            diplomatic_relation = {
+                country = ALB
+                relation = guarantee
+                active = yes
+            }
+
+            diplomatic_relation = {
+                country = ALB
+                relation = military_access
+                active = yes
+            }
+
+            diplomatic_relation = {
+                country = ALB
+                relation = non_aggression_pact
+                active = yes
+            }
+
+            diplomatic_relation = {
+                country = ALB
+                relation = docking_rights
+                active = yes
+            }
         }
+    }
+
+    focus = {
+        id = MNT_Propaganda_1
+        icon = GFX_focus_generic_improve_the_administration
+        x = -1
+        y = 1
+
+        cost = 3
+
+        completion_reward = {
+            add_war_support = 10
+            add_command_power = 20 # хз, балансно или нет
+            
+        }
+
+        prerequisite = {
+			focus = MNT_Alliance_With_Serbia_1
+		}
+    }
+    focus = {
+        id = MNT_War_Preparation_1
+        icon = GFX_focus_generic_improve_the_administration
+        x = 1
+        y = 1
+
+        cost = 3
+
+        completion_reward = {
+            
+            army_experience = 100 # хз, балансно или нет
+            add_building_production_speed = {
+                building = military_base
+                value = 0.10
+            }
+        }
+        
+
+        prerequisite = {
+			focus = MNT_Alliance_With_Serbia_1
+		}
+    }
+
+    focus = {
+        id = MNT_Sponsor_Radicals_1
+        icon = GFX_focus_generic_improve_the_administration
+        x = 3
+        y = 1
+
+        cost = 3
+
+        completion_reward = {
+            add_popularity = {
+                ideology = fascism
+                popularity = 10 # хз, балансно или нет
+            }
+        }
+
+        prerequisite = {
+			focus = MNT_Alliance_With_Serbia_1
+		}
+    }
+    focus = {
+        id = MNT_For_Courage_And_Heroism
+        icon = GFX_focus_generic_improve_the_administration
+        x = 1
+        y = 2
+
+        cost = 5
+
+        completion_reward = {
+            add_political_power = 100 # хз, балансно или нет
+            add_stability = 10 # хз, балансно или нет
+        }
+
+        prerequisite = {
+            focus = MNT_Propaganda_1
+			focus = MNT_War_Preparation_1
+            focus = MNT_Sponsor_Radicals_1           
+		}
     }
 }
