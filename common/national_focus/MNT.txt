@@ -1,0 +1,23 @@
+focus_tree = {
+    id = MNT_focus_tree
+
+    country = {
+            factor = 0
+            modifier = {
+            add = 10
+            tag = MNT
+        }
+    }
+
+    focus = {
+        id = MNT_Strengthening_The_Union
+        icon = GFX_focus_generic_improve_the_administration
+        x = 1
+        y = 0
+
+        cost = 5
+
+        completion_reward = {
+        }
+    }
+}
