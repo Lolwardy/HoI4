@@ -1,0 +1,36 @@
+capital = 105 # Montenegro
+
+OOB = "ALB_1936"
+
+set_research_slots = 3
+
+set_technology = {
+	tech_support = 1		
+	tech_engineers = 1
+	tech_mountaineers = 1
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+}
+
+recruit_character = MNT_kristo_popovic
+recruit_character = MNT_blazo_jovanovic
+recruit_character = MNT_blazo_dukanovic
+
+add_ideas = {
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	neutrality = 51
+	communism = 10
+	democratic = 32
+	fascism = 7
+}
+
+set_convoys = 2

@@ -1,0 +1,6 @@
+MNT_Radical_System = {
+	icon = generic_political_actions
+	allowed = {
+		tag = MNT
+	}
+}

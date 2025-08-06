@@ -1,0 +1,94 @@
+MNT_Radical_System = {
+	MNT_Infantry_Equipment = {
+		icon = generic_industry
+		available = {
+			has_completed_focus = MNT_Sponsor_Radicals
+		}
+		visible = {
+			has_completed_focus = MNT_Sponsor_Radicals
+		}
+		cost = 15
+ 		fire_only_once = no
+ 		days_remove = 25
+
+		remove_effect = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.01
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 350
+				producer = MNT
+			}
+		}
+	}
+	MNT_Support_Equipment = {
+		icon = generic_industry
+		available = {
+			has_completed_focus = MNT_Sponsor_Radicals
+		}
+		visible = {
+			has_completed_focus = MNT_Sponsor_Radicals
+		}
+		cost = 25
+ 		fire_only_once = no
+ 		days_remove = 25
+
+		remove_effect = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.02
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 100
+				producer = MNT
+			}
+		}
+	}
+	MNT_Artillery_Equipment = {
+		icon = generic_industry
+		available = {
+			has_completed_focus = MNT_Sponsor_Radicals
+		}
+		visible = {
+			has_completed_focus = MNT_Sponsor_Radicals
+		}
+		cost = 25
+ 		fire_only_once = no
+ 		days_remove = 25
+
+		remove_effect = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.02
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 50
+				producer = MNT
+			}
+		}
+	}
+	MNT_Manpower = {
+		icon = generic_industry
+		available = {
+			has_completed_focus = MNT_Sponsor_Radicals
+		}
+		visible = {
+			has_completed_focus = MNT_Sponsor_Radicals
+		}
+		cost = 50
+ 		fire_only_once = no
+ 		days_remove = 50
+
+		remove_effect = {
+		add_popularity = {
+				ideology = fascism
+				popularity = 0.03
+			}
+			add_manpower = 3500
+		}
+	}
+}
