@@ -8,4 +8,28 @@ SpriteTypes = {
 		name = "GFX_ALB_Army"
 		texturefile = "gfx/interface/goals/ALB/ALB_Army.dds"
 	}
+	SpriteType = {
+		name = "GFX_focus_generic_commonwealth_build_infantry"
+		texturefile = "gfx/interface/goals/focus_generic_commonwealth_build_infantry.dds"
+	}
+		SpriteType = {
+		name = "GFX_focus_generic_army_doctrines"
+		texturefile = "gfx/interface/goals/goal_generic_army_doctrines.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_generic_military_industry"
+		texturefile = "gfx/interface/goals/focus_generic_military_industry.dds"
+	}
+		SpriteType = {
+		name = "GFX_focus_chi_army_reform"
+		texturefile = "gfx/interface/goals/focus_chi_army_reform.dds"
+	}
+		SpriteType = {
+		name = "GFX_focus_CONGO_copper_cartridges"
+		texturefile = "gfx/interface/goals/focus_CONGO_copper_cartridges.dds"
+	}
+		SpriteType = {
+		name = "GFX_focus_generic_military_mission"
+		texturefile = "gfx/interface/goals/focus_generic_military_mission.dds"
+	}
 }
