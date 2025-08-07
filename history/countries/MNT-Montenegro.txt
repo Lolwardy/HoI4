@@ -17,6 +17,7 @@ recruit_character = MNT_blazo_jovanovic
 recruit_character = MNT_blazo_dukanovic
 
 add_ideas = {
+	Undeveloped_Montenegro_Army
 }
 
 set_politics = {

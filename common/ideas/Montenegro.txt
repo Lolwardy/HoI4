@@ -1,0 +1,56 @@
+ideas = {
+    country = {
+        Undeveloped_Montenegro_Army = {
+
+            removal_cost = -1
+
+            allowed = {
+            
+            }
+            
+            picture = generic_pp_unity_bonus
+
+            modifier = {
+				army_org = -10
+				army_attack_factor = -0.1
+				army_defence_factor = -0.1
+            }
+        }
+    }
+	country = {
+        Semi_Developed_Montenegro_Army = {
+
+            removal_cost = -1
+
+            allowed = {
+            
+            }
+            
+            picture = generic_pp_unity_bonus
+
+            modifier = {
+				army_org = -5
+				army_attack_factor = -0.05
+				army_defence_factor = -0.05
+            }
+        }
+    }
+	country = {
+        Developed_Montenegro_Army = {
+
+            removal_cost = -1
+
+            allowed = {
+            
+            }
+            
+            picture = generic_pp_unity_bonus
+
+            modifier = {
+				army_morale_factor = 0.1
+				dig_in_speed_factor = 0.05
+				max_dig_in = 5
+            }
+        }
+    }
+}
