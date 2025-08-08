@@ -8,129 +8,622 @@ focus_tree = {
 			tag = MNT
 		}
 	}
+    continuous_focus_position = { x = 0 y = 1500}
 
+# --- Вырезанная ветка ---
+#    focus = {
+#        id = MNT_Alliance_With_Serbia
+#        icon = GFX_focus_generic_improve_the_administration
+#        x = 0
+#        y = 0
+#
+#        cost = 10
+#
+#
+#        completion_reward = {
+#            add_political_power = 25
+#            add_opinion_modifier = {
+#                target = SER
+#                who = MNT
+#                modifier = "friendly"
+#                value = 50
+#            }
+#
+#            give_guarantee = SER
+#
+#            give_military_access = SER
+#
+#            diplomatic_relation = {
+#                country = SER
+#                relation = guarantee
+#                active = yes
+#            }
+#
+#            diplomatic_relation = {
+#                country = SER
+#                relation = military_access
+#                active = yes
+#            }
+#
+#            diplomatic_relation = {
+#                country = SER
+#                relation = non_aggression_pact
+#                active = yes
+#            }
+#        }
+#    }
+#
+#    focus = {
+#        id = MNT_Propaganda
+#        icon = GFX_focus_generic_improve_the_administration
+#        x = -2
+#        y = 1
+#        relative_position_id = MNT_Alliance_With_Serbia
+#
+#        cost = 5
+#
+#        completion_reward = {
+#            add_war_support = 0.05
+#            add_command_power = 25 # хз, балансно или нет
+#            
+#      }
+#
+#        prerequisite = {
+#			focus = MNT_Alliance_With_Serbia
+#		}
+#    }
+#
+#    focus = {
+#        id = MNT_War_Preparation
+#        icon = GFX_focus_generic_improve_the_administration
+#        x = 0
+#        y = 1
+#        relative_position_id = MNT_Alliance_With_Serbia
+#
+#        cost = 5
+#
+#        completion_reward = {
+#            
+#            army_experience = 10 # хз, балансно или нет
+#            add_building_production_speed = {
+#                building = military_base
+#                value = 0.10
+#            }
+#        }
+#        
+#
+#        prerequisite = {
+#			focus = MNT_Alliance_With_Serbia
+#		}
+#    }
+#
+#    focus = {
+#        id = MNT_Sponsor_Radicals
+#        icon = GFX_focus_generic_improve_the_administration
+#        x = 2
+#        y = 1
+#        relative_position_id = MNT_Alliance_With_Serbia
+#
+#        cost = 5
+#
+#        completion_reward = {
+#            unlock_decision_category_tooltip = MNT_Radical_System
+#        }
+#
+#
+#        prerequisite = {
+#			focus = MNT_Alliance_With_Serbia
+#		}
+#    }
+#
+#    focus = {
+#        id = MNT_For_Courage_And_Heroism
+#        icon = GFX_focus_generic_improve_the_administration
+#        x = 0
+#        y = 2
+#
+#        cost = 5
+#
+#        completion_reward = {
+#            add_political_power = 75
+#            add_war_support = 0.05
+#            add_stability = 0.05 
+#		}
+#        prerequisite = { focus = MNT_Propaganda }
+#        prerequisite = { focus = MNT_War_Preparation }
+#        prerequisite = { focus = MNT_Sponsor_Radicals } 
+#    }
+# ^^^                  ^^^
+# --- Вырезанная ветка ---
+
+# --- Основная ветка фокусов ---
     focus = {
-        id = MNT_Alliance_With_Serbia
+        id = MNT_Great_War_Lessons
         icon = GFX_focus_generic_improve_the_administration
         x = 0
         y = 0
 
+
+        cost = 10
+
+        completion_reward = {     
+            add_political_power = 100
+        }
+    }
+    focus = {
+        id = MNT_Alt_Path
+        icon = GFX_focus_generic_improve_the_administration
+        relative_position_id = MNT_Great_War_Lessons
+        x = -2
+        y = 1
+
+
+        cost = 10
+
+        completion_reward = {     
+            add_opinion_modifier = {
+                target = ALB
+                who = MNT
+                modifier = "friendly"
+                value = 30
+            }
+            add_opinion_modifier = {
+                target = BUL
+                who = MNT
+                modifier = "friendly"
+                value = 10
+            }
+            add_opinion_modifier = {
+                target = SER
+                who = MNT
+                modifier = "hostile" # <--- проверить, работает или нет модификатор
+                value = 20
+            }
+                
+        }
+        prerequisite = { focus = MNT_Great_War_Lessons }
+        mutually_exclusive = { focus = MNT_Proserbian_Path }
+    }
+    focus = {
+        id = MNT_Bulgarian_Ambitions
+        icon = GFX_focus_generic_improve_the_administration
+        relative_position_id = MNT_Great_War_Lessons
+        x = -2
+        y = 2
+
+
+        cost = 10
+
+        completion_reward = {     
+            add_stability = -0.05 # проверить, работает или нет добавление в отрицательную сторону
+            add_opinion_modifier = {
+                target = BUL
+                who = MNT
+                modifier = "friendly"
+                value = 30
+            }     
+        }
+        prerequisite = { focus = MNT_Alt_Path }
+    }
+    focus = {
+        id = MNT_Bulgarian_Sphere
+        icon = GFX_focus_generic_improve_the_administration
+        relative_position_id = MNT_Great_War_Lessons
+        x = -2
+        y = 3
+
+
+        cost = 10
+
+        completion_reward = {     
+            add_stability = -0.05 # проверить, работает или нет
+            # todo
+            # create_faction = Test_Faction 
+            # MNT = { add_to_faction = BUL }
+        }
+        prerequisite = { focus = MNT_Bulgarian_Ambitions }
+    }
+    focus = {
+        id = MNT_Albanian_Invest
+        icon = GFX_focus_generic_improve_the_administration
+        relative_position_id = MNT_Great_War_Lessons
+        x = -3
+        y = 4
+
+
+        cost = 10
+
+        completion_reward = {     
+            add_political_power = 200
+            add_research_slot = 1
+            105 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+					type = 	industrial_complex
+					level = 2
+					instant_build = yes
+                }
+            }
+        }
+        prerequisite = { focus = MNT_Bulgarian_Sphere }
+    }
+    focus = {
+        id = MNT_Bulgaria_Pact
+        icon = GFX_focus_generic_improve_the_administration
+        relative_position_id = MNT_Great_War_Lessons
+        x = -1
+        y = 4
+
+
+        cost = 10
+
+        completion_reward = {     
+            add_war_support = 0.05
+            105 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+					type = 	arms_factory
+					level = 2
+					instant_build = yes
+                }
+            }
+        }
+        prerequisite = { focus = MNT_Bulgarian_Sphere }
+    }
+    focus = {
+        id = MNT_Local_Industrial
+        icon = GFX_focus_generic_improve_the_administration
+        relative_position_id = MNT_Great_War_Lessons
+        x = -2
+        y = 5
+
+
         cost = 10
 
         completion_reward = {
-            add_political_power = 25
+            105 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+					type = 	arms_factory
+					level = 1
+					instant_build = yes
+                }
+                add_building_construction = {
+					type = 	industrial_complex
+					level = 1
+					instant_build = yes
+                }
+            }
+        }    
+
+        prerequisite = { focus = MNT_Albanian_Invest }
+        prerequisite = { focus = MNT_Bulgaria_Pact }
+    }
+    focus = {
+        id = MNT_Subjugation
+        icon = GFX_focus_generic_improve_the_administration
+        relative_position_id = MNT_Great_War_Lessons
+        x = -4
+        y = 6
+
+
+        cost = 10
+
+        completion_reward = {     
+            add_stability = -0.1
+            add_political_power = -250
+        }
+        prerequisite = { focus = MNT_Local_Industrial }
+    }
+    focus = {
+        id = MNT_Part_Of_Alb
+        icon = GFX_focus_generic_improve_the_administration
+        relative_position_id = MNT_Great_War_Lessons
+        x = -4
+        y = 7
+
+
+        cost = 10
+
+        completion_reward = {     
+            # TODO
+        }
+        prerequisite = { focus = MNT_Subjugation }
+        mutually_exclusive = { focus = MNT_Part_Of_Bul }
+        
+    }
+    focus = {
+        id = MNT_Part_Of_Bul
+        icon = GFX_focus_generic_improve_the_administration
+        relative_position_id = MNT_Great_War_Lessons
+        x = -2
+        y = 7
+
+
+        cost = 10
+
+        completion_reward = {     
+            # TODO
+        }
+        prerequisite = { focus = MNT_Subjugation }
+        mutually_exclusive = { focus = MNT_Part_Of_Alb }
+    }
+    focus = {
+        id = MNT_Proserbian_Path
+        icon = GFX_focus_generic_improve_the_administration
+        relative_position_id = MNT_Great_War_Lessons
+        x = 2
+        y = 1
+
+
+        cost = 10
+
+        completion_reward = {     
+            add_political_power = 100
+            add_stability = 0.05
+            add_war_support = -0.05
+        }
+        prerequisite = { focus = MNT_Great_War_Lessons }
+        mutually_exclusive = { focus = MNT_Alt_Path }
+    }
+    focus = {
+        id = MNT_Extend_Agreement
+        icon = GFX_focus_generic_improve_the_administration
+        relative_position_id = MNT_Great_War_Lessons
+        x = 2
+        y = 2
+
+
+        cost = 10
+
+        completion_reward = {     
+            add_war_support = 0.1
+            105 = {
+                    add_extra_state_shared_building_slots = 3
+                    add_building_construction = {
+					    type = arms_factory
+					    level = 3
+					    instant_build = yes
+                    }
+            }
+        }
+        prerequisite = { focus = MNT_Proserbian_Path }
+    }
+    focus = {
+        id = MNT_Brotherly_Nation
+        icon = GFX_focus_generic_improve_the_administration
+        relative_position_id = MNT_Great_War_Lessons
+        x = 2
+        y = 3
+
+
+        cost = 10
+
+        completion_reward = {     
+            105 = {
+                    add_extra_state_shared_building_slots = 1
+                    add_building_construction = {
+					    type = industrial_complex
+					    level = 1
+					    instant_build = yes
+                    }
+            }
             add_opinion_modifier = {
                 target = SER
                 who = MNT
                 modifier = "friendly"
                 value = 50
             }
+        }
+        prerequisite = { focus = MNT_Extend_Agreement }
+    }
+    focus = {
+        id = MNT_Pan_Slavism
+        icon = GFX_focus_generic_improve_the_administration
+        relative_position_id = MNT_Great_War_Lessons
+        x = 4
+        y = 4
 
-            give_guarantee = SER
 
-            give_military_access = SER
+        cost = 10
 
-            diplomatic_relation = {
-                country = SER
-                relation = guarantee
-                active = yes
-            }
-
-            diplomatic_relation = {
-                country = SER
-                relation = military_access
-                active = yes
-            }
-
-            diplomatic_relation = {
-                country = SER
-                relation = non_aggression_pact
-                active = yes
+        completion_reward = {     
+            add_stability = 0.1
+            SER = {
+                create_wargoal = {
+                    type = take_state_focus
+                    target = MNT
+                    generator = { 105 }
+                    expire = 0
+                }
             }
         }
+        prerequisite = { focus = MNT_Brotherly_Nation }
+        mutually_exclusive = { focus = MNT_Separate_Doctrine }
     }
-
     focus = {
-        id = MNT_Propaganda
+        id = MNT_Southern_Slavs_State
         icon = GFX_focus_generic_improve_the_administration
-        x = -2
-        y = 1
-        relative_position_id = MNT_Alliance_With_Serbia
+        relative_position_id = MNT_Great_War_Lessons
+        x = 4
+        y = 5
 
-        cost = 5
 
-        completion_reward = {
-            add_war_support = 0.05
-            add_command_power = 25 # хз, балансно или нет
-            
+        cost = 10
+
+        completion_reward = {     
+            # TODO
         }
-
-        prerequisite = {
-			focus = MNT_Alliance_With_Serbia
-		}
+        prerequisite = { focus = MNT_Pan_Slavism }
     }
-
     focus = {
-        id = MNT_War_Preparation
+        id = MNT_Separate_Doctrine
         icon = GFX_focus_generic_improve_the_administration
-        x = 0
-        y = 1
-        relative_position_id = MNT_Alliance_With_Serbia
-
-        cost = 5
-
-        completion_reward = {
-            
-            army_experience = 10 # хз, балансно или нет
-            add_building_production_speed = {
-                building = military_base
-                value = 0.10
-            }
-        }
-        
-
-        prerequisite = {
-			focus = MNT_Alliance_With_Serbia
-		}
-    }
-
-    focus = {
-        id = MNT_Sponsor_Radicals
-        icon = GFX_focus_generic_improve_the_administration
+        relative_position_id = MNT_Great_War_Lessons
         x = 2
-        y = 1
-        relative_position_id = MNT_Alliance_With_Serbia
+        y = 4
 
-        cost = 5
 
-        completion_reward = {
-            unlock_decision_category_tooltip = MNT_Radical_System
+        cost = 10
+
+        completion_reward = {     
+            add_stability = -0.1
+            add_opinion_modifier = {
+                target = ALB
+                who = MNT
+                modifier = "hostile"
+                value = 10
+            }
+            add_opinion_modifier = {
+                target = BUL
+                who = MNT
+                modifier = "hostile"
+                value = 10
+            }
+            add_opinion_modifier = {
+                target = SER
+                who = MNT
+                modifier = "hostile"
+                value = 10
+            }
+            #TODO UNITS
         }
+        prerequisite = { focus = MNT_Brotherly_Nation }
+        mutually_exclusive = { focus = MNT_Pan_Slavism }
 
-
-        prerequisite = {
-			focus = MNT_Alliance_With_Serbia
-		}
     }
-
     focus = {
-        id = MNT_For_Courage_And_Heroism
+        id = MNT_Nationalist_Course
         icon = GFX_focus_generic_improve_the_administration
-        x = 0
-        y = 2
+        relative_position_id = MNT_Great_War_Lessons
+        x = 1
+        y = 6
 
-        cost = 5
 
-        completion_reward = {
-            add_political_power = 75
-            add_war_support = 0.05
-            add_stability = 0.05 
-		}
-        prerequisite = { focus = MNT_Propaganda }
-        prerequisite = { focus = MNT_War_Preparation }
-        prerequisite = { focus = MNT_Sponsor_Radicals } 
+        cost = 10
+
+        completion_reward = {     
+            add_war_support = 0.1
+            #TODO EVENTS
+        }
+        prerequisite = { focus = MNT_Separate_Doctrine, focus = MNT_Local_Industrial }
     }
+    focus = {
+        id = MNT_Military_Reform
+        icon = GFX_focus_generic_improve_the_administration
+        relative_position_id = MNT_Great_War_Lessons
+        x = 1
+        y = 7
 
+
+        cost = 10
+
+        completion_reward = {     
+            105 = {
+                add_extra_state_shared_building_slots = 4
+                add_building_construction = {
+					type = 	arms_factory
+					level = 2
+					instant_build = yes
+                }
+                add_building_construction = {
+					type = 	industrial_complex
+					level = 2
+					instant_build = yes
+                }
+            }
+        }
+        #TODO UNITS
+        prerequisite = { focus = MNT_Nationalist_Course }
+    }
+    focus = {
+        id = MNT_Our_Place
+        icon = GFX_focus_generic_improve_the_administration
+        relative_position_id = MNT_Great_War_Lessons
+        x = 1
+        y = 8
+
+
+        cost = 10
+
+        completion_reward = {     
+            add_research_slot = 1
+            add_stability = 0.05
+            add_political_power = 200
+            add_war_support = 0.05
+            #TODO UNITS
+        }
+        prerequisite = { focus = MNT_Military_Reform }
+    }
+    focus = {
+        id = MNT_What_Is_Alb
+        icon = GFX_focus_generic_improve_the_administration
+        relative_position_id = MNT_Great_War_Lessons
+        x = -1
+        y = 9
+
+
+        cost = 10
+
+        completion_reward = {     
+            create_wargoal = {
+                type = take_state_focus
+                target = PREV
+                generator = { 934 44 805 }
+                expire = 180
+            }
+        }
+        prerequisite = { focus = MNT_Our_Place }
+    }
+    focus = {
+        id = MNT_Med_Outpost
+        icon = GFX_focus_generic_improve_the_administration
+        relative_position_id = MNT_Great_War_Lessons
+        x = -1
+        y = 10
+
+
+        cost = 10
+
+        completion_reward = {     
+            add_stability = 300
+            set_cosmetic_tag = MNT_Med
+        }
+        prerequisite = { focus = MNT_What_Is_Alb }
+        available = {
+            controls_province = 934 AND = {
+                controls_province = 44 AND = {
+                    controls_province = 805
+                }
+            }
+        }
+    }
+    focus = {
+        id = MNT_Economic_Success
+        icon = GFX_focus_generic_improve_the_administration
+        relative_position_id = MNT_Great_War_Lessons
+        x = 3
+        y = 9
+
+
+        cost = 10
+
+        completion_reward = {     
+            add_political_power = 200
+            105 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                }
+            }
+        }
+        prerequisite = { focus = MNT_Our_Place }
+    }
+# ^^^                        ^^^
+# --- Основная ветка фокусов ---
+
+# --- Основная ветка армии ---
     focus = {
         id = MNT_Army
         icon = GFX_focus_generic_commonwealth_build_infantry
